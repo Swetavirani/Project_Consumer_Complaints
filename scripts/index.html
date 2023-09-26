@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Project 3</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <style>
+    .jumbotron {
+        color:rgb(255, 255, 255);
+        background-color: rgb(22, 153, 173);
+    }
+    .panel{
+        color:rgb(0, 0, 0);
+        background-color: rgb(22, 153, 173);
+        border-color: rgb(22, 153, 173);
+    }
+    .panel-heading{
+      background-color: rgb(255, 255, 255);
+    }
+    .well{
+      background-color: rgb(22, 153, 173);
+      color:rgb(0, 0, 0);
+    }
+</style>
+</head>
+
+<body>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12 jumbotron text-center">
+        <h1> Consumer Complaint Dashboard</h1>
+        <p>Use the interactive charts below to explore the dataset</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-2">
+        <div class="panel">
+          <div class="panel-heading">
+            <h2 class="panel-title text-center"># of Complaints by Product type</h2>
+          </div>
+          <div id="product_count" class="panel-body"></div>
+        </div>
+      </div>
+
+      <div class="col-md-8">
+        <div class="well text-center">
+          <h4>Select Product type:</h4>
+          <select id="selDataset" onchange="optionChanged(this.value)"></select>
+        </div>
+      </div>
+
+      <div class="col-md-2">
+        <div class="panel">
+          <div class="panel-heading">
+            <h3 class="panel-title text-center">Number of Unique Companies</h3>
+          </div>
+          <div id="unq_companies" class="panel-body"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-8" >
+        <canvas id="graph1" style="height : 450px"></canvas>
+      </div>
+      <div class="col-md-4">
+        <div id="graph2"></div>
+      </div>
+
+    </div>
+
+    <div class="row">
+      <div class="col-md-6" id = graph3_div>
+        <canvas id="graph3" style="height : 450px" ></canvas>
+      </div>
+      <div class="col-md-6" id="graph4_div">
+        <canvas id="graph4" ></canvas>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+  <script src="./app.js"></script>
+  
+</body>
+
+</html>
